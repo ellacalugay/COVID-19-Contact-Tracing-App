@@ -22,14 +22,13 @@ class AddEntry(tk.Frame):
         canvas.create_image(0, 0, image=self.background_image, anchor="nw")
 
     # Create Personal Information Label
-        self.personal_info_label = tk.Label(self, text="PERSONAL INFORMATION", height=2, font=("Helvetica", 10, "bold"))
+        self.personal_info_label = tk.Label(self, text=" PERSONAL INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
         self.personal_info_label.place(x=15, y=10)
         self.personal_info_label.config(bg="#FFE1FF")
         # Get user's name
-        self.name = tk.Label(self, text="NAME:  ", height=1, font=("Arial", 10, "bold"))
-        self.name.place(x=17, y=55)
+        self.name = tk.Label(self, text="NAME: ", height=1, font=("Lucida Bright", 10, "bold"))
+        self.name.place(x=17, y=56)
         self.name.config(bg="#EAEAEA")
-        
         # Name Input
         self.name_entry = tk.Entry(self, width=40)
         self.name_entry.place(x=70, y= 56)
@@ -39,10 +38,9 @@ class AddEntry(tk.Frame):
         self.name_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Get user's age
-        self.age = tk.Label(self, text="AGE:    ", height=1, font=("Arial", 10, "bold"))
+        self.age = tk.Label(self, text="AGE:    ", height=1, font=("Lucida Bright", 10, "bold"))
         self.age.place(x=17, y=80)
         self.age.config(bg="#EAEAEA")
-        
         # Age Input
         self.age_entry = tk.Entry(self, width=40)
         self.age_entry.place(x=70, y= 80)
@@ -52,6 +50,17 @@ class AddEntry(tk.Frame):
         self.age_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Get user's gender
+        self.gender = tk.Label(self, text="SEX:     ", height=1, font=("Lucida Bright", 10, "bold"))
+        self.gender.place(x=17, y=105)
+        self.gender.config(bg="#EAEAEA")
+        # Gender Input
+        self.gender_entry = tk.Entry(self, width=40)
+        self.gender_entry.place(x=70, y= 105)
+        # Set initial text
+        self.gender_entry.insert(0, "FEMALE/MALE")  
+        self.gender_entry.bind("<FocusIn>", self.clear_age_text)
+        self.gender_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
+
         # Get user's residential address
 
     # Create Contact Information label
