@@ -1,42 +1,16 @@
 # Ella Lureen C. Calugay | BSCPE 1-5 | Final Project
 
 # Pseudocode
-# Importing necessary modules
 import tkinter as tk
-from PIL import Image, ImageTk
-
-# Import the UserInformation class from user_information.py
+from PIL import ImageTk, Image
+# Import the UserInformation class from contact_tracing.py
 from contact_tracing import UserInformation
 
-# Define # Function to show the personal information window
-def show_personal_info_window():
-    personal_info_window = tk.Toplevel(window)
-    personal_info_window.title("Personal Information")
-
+# Define the main function
+def main():
+    # Create an instance of the UserInformation class
     user_info = UserInformation()
 
-    # Label to display instructions
-    label = tk.Label(personal_info_window, text="Please provide your personal information:")
-    label.pack()
-
-    # Entry fields for personal information
-    entry_name = tk.Entry(personal_info_window)
-    entry_name.pack()
-    label_name = tk.Label(personal_info_window, text="Name:")
-    label_name.pack()
-
-    entry_age = tk.Entry(personal_info_window)
-    entry_age.pack()
-    label_age = tk.Label(personal_info_window, text="Age:")
-    label_age.pack()
-
-    # Function to get the user's information and update the UserInformation instance
-    def get_personal_info():
-        user_info.personal_information["name"] = entry_name.get()
-        user_info.personal_information["age"] = int(entry_age.get())
-
-    # Close the personal_info_window after gathering the information
-    personal_info_window.destroy()
     # Call the methods to ask for the user's information
     user_info.ask_personal_information()
     user_info.ask_covid_vaccination_type()
@@ -47,6 +21,19 @@ def show_personal_info_window():
     user_info.ask_covid19_testing()
     user_info.ask_emergency_information()
     user_info.ask_receive_notifications()
+
+    # Access the collected user information through the instance's attributes
+    print("User Information:")
+    print(f"Name: {user_info.name}")
+    print(f"Course and Year: {user_info.course_year}")
+
+# Call the main function when the "Add Entry" button is clicked
+def add_entry():
+    main()
+
+def search_entry():
+    # Search entry functionality
+    pass
 
 # Create the main window
 window = tk.Tk()
@@ -84,6 +71,3 @@ search_button.place(x=570, y=535, width=200)
 
 # Run the main window loop
 window.mainloop()
-
-
-
