@@ -21,7 +21,7 @@ class UserInformation:
         self.personal_information["name"] = input("What is your full name?: ")
         self.personal_information["age"] = int(input("How old are you?: "))
         self.personal_information["gender"] = input("What is your gender?: ")
-        self.personal_information["phone number"] = input("What is your contact number?: ")
+        self.personal_information["phone number"] = int(input("What is your contact number?: "))
         self.personal_information["email address"] = input("What is your email address?: ")
         self.personal_information["residential address"] = input("What is your residential address?: ")
         self.personal_information["occupation"] = input("What is your current occupation?: ")
