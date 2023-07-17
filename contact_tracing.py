@@ -92,5 +92,11 @@ class UserInformation:
             self.covid19_testing["result_date"] = input("Date of the test result: ")
             self.covid19_testing["test_result"] = input("Test result (Positive/Negative): ").lower() == "positive"
 
-# Ask the user about his/her emergency information.
+    # Ask the user about his/her emergency information.   
+    def ask_emergency_information(self):
+            print("Emergency Information:")
+            self.emergency_information["emergency_contact"] = input("Emergency Contact Name: ")
+            self.emergency_information["emergency_phone"] = input("Emergency Contact Phone number: ")
+            self.emergency_information["blood_type"] = input("Your Blood Type: ")
+
 # Ash the user if he/she wants to receive notifications from the app.
