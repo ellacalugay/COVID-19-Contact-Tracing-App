@@ -51,6 +51,17 @@ class UserInformation:
                 else:
                     print("Invalid input. Please enter a valid option (1, 2, 3, or 4).")
 
+    # Ask the user about health declaration.
+    def ask_health_declaration(self):
+        print("Health Declaration:")
+        self.health_declaration["fever"] = input("Have you experienced fever in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["cough"] = input("Have you experienced a new or worsening cough in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["breathing_issues"] = input("Have you experienced any breathing issues in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["fatigue"] = input("Have you experienced feeling excessively tired in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["loss of state and smell"] = input("Have you experienced anosmia(loss of smell) or ageusia (loss of taste) in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["sore throat"] = input("Have you experienced pain or irritation in the throat in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.health_declaration["diarrhea"] = input("Have you experienced diarrhea in the last 14 days? (Yes/No): ").lower() == "yes"
+
 # Ask the user about Risk Assessment.
 # Ask the user for his/her travel history.
 # Ask the user about contact log.
