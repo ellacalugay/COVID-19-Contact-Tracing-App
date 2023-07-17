@@ -13,6 +13,7 @@ class UserInformation:
         self.covid19_testing = {}
         self.emergency_information = {}
         self.receive_notifications = False
+
 # Ask the user for his/her personal information.
 # Ask the user about Health Declaration.
 # Ask the user about Risk Assessment.
