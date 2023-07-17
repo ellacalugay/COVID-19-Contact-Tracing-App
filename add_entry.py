@@ -21,10 +21,11 @@ class AddEntry(tk.Frame):
         canvas.pack(fill="both", expand=True)
         canvas.create_image(0, 0, image=self.background_image, anchor="nw")
 
-    # Create Personal Information Label
+        # Create Personal Information Label
         self.personal_info_label = tk.Label(self, text=" PERSONAL INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
         self.personal_info_label.place(x=15, y=10)
         self.personal_info_label.config(bg="#FFE1FF")
+
         # Get user's name
         self.name = tk.Label(self, text="NAME: ", height=1, font=("Lucida Bright", 10, "bold"))
         self.name.place(x=17, y=56)
@@ -58,7 +59,7 @@ class AddEntry(tk.Frame):
         self.gender_entry.place(x=70, y= 105)
         # Set initial text
         self.gender_entry.insert(0, "FEMALE/MALE")  
-        self.gender_entry.bind("<FocusIn>", self.clear_age_text)
+        self.gender_entry.bind("<FocusIn>", self.clear_sex_text)
         self.gender_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Get user's residential address
@@ -70,10 +71,14 @@ class AddEntry(tk.Frame):
         self.residential_address_entry.place(x=100, y= 130)
         # Set initial text
         self.residential_address_entry.insert(0, "BARANGAY/CITY/PROVINCE")  
-        self.residential_address_entry.bind("<FocusIn>", self.clear_age_text)
+        self.residential_address_entry.bind("<FocusIn>", self.clear_resi_add_text)
         self.residential_address_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
-    # Create Contact Information label
+        # Create Contact Information label
+        self.contact_info_label = tk.Label(self, text=" CONTACT INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
+        self.contact_info_label.place(x=380, y=10)
+        self.contact_info_label.config(bg="#FFE1FF")
+
         # Get user's contact number
         # Get user's email address
 
@@ -104,3 +109,9 @@ class AddEntry(tk.Frame):
     def clear_age_text(self, event):
         self.age_entry.delete(0, tk.END)
         self.age_entry.config(fg="black")
+    def clear_sex_text(self, event):
+        self.gender_entry.delete(0, tk.END)
+        self.gender_entry.config(fg="black")
+    def clear_resi_add_text(self, event):
+        self.residential_address_entry.delete(0, tk.END)
+        self.residential_address_entry.config(fg="black")
