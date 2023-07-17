@@ -6,6 +6,7 @@ class UserInformation:
     # Create a non-parametrized constructor
     def __init__(self):
         self.personal_information = {}
+        self.vaccinated_covid = False
         self.health_declaration = {}
         self.risk_assessment = {}
         self.travel_history = []
@@ -24,7 +25,16 @@ class UserInformation:
         self.personal_information["email address"] = input("What is your email address?: ")
         self.personal_information["residential address"] = input("What is your residential address?: ")
         self.personal_information["occupation"] = input("What is your current occupation?: ")
-        
+
+        # Prompt for COVID-19 vaccination
+        while True:
+            response = input("Have you been vaccinated for COVID-19? (yes/no)")
+            if response in ["yes", "no"]:
+                self.vaccinated_covid = response == "yes"
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
+
 # Ask the user about Risk Assessment.
 # Ask the user for his/her travel history.
 # Ask the user about contact log.
