@@ -1,7 +1,7 @@
 # Ella Lureen C. Calugay | BSCPE 1-5 | Final Project
 
 # Pseudocode
-# Import necessar
+# Import necessary modules
 import tkinter as tk
 from PIL import ImageTk, Image
 
