@@ -24,21 +24,33 @@ class AddEntry(tk.Frame):
     # Create Personal Information Label
         self.personal_info_label = tk.Label(self, text="PERSONAL INFORMATION", height=2, font=("Helvetica", 10, "bold"))
         self.personal_info_label.place(x=15, y=10)
-        self.personal_info_label.config(bg="#B0C4DE")
+        self.personal_info_label.config(bg="#FFE1FF")
         # Get user's name
-        self.name = tk.Label(self, text="NAME: ", height=1, font=("Arial", 10, "bold"))
-        self.name.place(x=17, y=50)
-        self.name.config(bg="#FFF68F")
+        self.name = tk.Label(self, text="NAME:  ", height=1, font=("Arial", 10, "bold"))
+        self.name.place(x=17, y=55)
+        self.name.config(bg="#EAEAEA")
         
         # Name Input
         self.name_entry = tk.Entry(self, width=40)
-        self.name_entry.place(x=70, y= 51)
+        self.name_entry.place(x=70, y= 56)
         # Set initial text
         self.name_entry.insert(0, "FIRST NAME/MIDDLE NAME/SURNAME")  
         self.name_entry.bind("<FocusIn>", self.clear_name_text)
-        self.name_entry.config(fg="gray", bg="#FFF8DC")
+        self.name_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Get user's age
+        self.age = tk.Label(self, text="AGE:    ", height=1, font=("Arial", 10, "bold"))
+        self.age.place(x=17, y=80)
+        self.age.config(bg="#EAEAEA")
+        
+        # Age Input
+        self.age_entry = tk.Entry(self, width=40)
+        self.age_entry.place(x=70, y= 80)
+        # Set initial text
+        self.age_entry.insert(0, "YOUR AGE")  
+        self.age_entry.bind("<FocusIn>", self.clear_age_text)
+        self.age_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
+
         # Get user's gender
         # Get user's residential address
 
@@ -67,7 +79,9 @@ class AddEntry(tk.Frame):
         # Ask if the user have been tested for COVID-19? 
 
     # Display text will be gone if the user click the entry
-
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
         self.name_entry.config(fg="black")
+    def clear_age_text(self, event):
+        self.age_entry.delete(0, tk.END)
+        self.age_entry.config(fg="black")
