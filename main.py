@@ -1,6 +1,10 @@
 # Ella Lureen C. Calugay | BSCPE 1-5 | Final Project
 
 # Pseudocode
+# Importing necessary modules
+import tkinter as tk
+from PIL import Image, ImageTk
+
 # Import the UserInformation class from user_information.py
 from contact_tracing import UserInformation
 
