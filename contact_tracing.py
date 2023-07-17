@@ -99,4 +99,7 @@ class UserInformation:
             self.emergency_information["emergency_phone"] = input("Emergency Contact Phone number: ")
             self.emergency_information["blood_type"] = input("Your Blood Type: ")
 
-# Ash the user if he/she wants to receive notifications from the app.
+    # Ask the user if he/she wants to receive notifications from the app.
+    def ask_receive_notifications(self):
+        response = input("Do you want to receive notifications from the app? (Yes/No): ").lower()
+        self.receive_notifications = response == "yes"
