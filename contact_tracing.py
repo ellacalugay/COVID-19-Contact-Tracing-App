@@ -83,6 +83,14 @@ class UserInformation:
             for i in range(num_contacts):
                 self.contact_log.append(input(f"Contact {i+1}: "))
 
-# Ask the user about testing and test results for COVID 19.
+    # Ask the user about testing and test results for COVID 19.
+    def ask_covid19_testing(self):
+        print("COVID-19 Testing:")
+        self.covid19_testing["tested_positive"] = input("Have you tested positive for COVID-19? (Yes/No): ").lower() == "yes"
+        if self.covid19_testing["tested_positive"]:
+            self.covid19_testing["test_date"] = input("Date of the COVID-19 test: ")
+            self.covid19_testing["result_date"] = input("Date of the test result: ")
+            self.covid19_testing["test_result"] = input("Test result (Positive/Negative): ").lower() == "positive"
+
 # Ask the user about his/her emergency information.
 # Ash the user if he/she wants to receive notifications from the app.
