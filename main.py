@@ -8,7 +8,10 @@ from contact_tracing import UserInformation
 def main():
     # Create an instance of the UserInformation class
     user_info = UserInformation()
-    
-# Call the methods to ask for the user's information
+
+    # Call the methods to ask for the user's information
+    user_info.ask_personal_information()
 # Access the collected user information through the instance's attributes
+
 # Call the main function
+main()

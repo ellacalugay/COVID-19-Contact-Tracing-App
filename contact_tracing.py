@@ -28,7 +28,7 @@ class UserInformation:
 
         # Prompt for COVID-19 vaccination
         while True:
-            response = input("Have you been vaccinated for COVID-19? (yes/no)")
+            response = input("Have you been vaccinated for COVID-19? (yes/no): ")
             if response in ["yes", "no"]:
                 self.vaccinated_covid = response == "yes"
                 break
