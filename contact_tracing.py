@@ -69,7 +69,13 @@ class UserInformation:
         self.risk_assessment["close_contact_positive_cases"] = input("Have you been in close contact with someone who has tested positive for COVID-19? If yes, who are they? (Yes/No): ").lower() == "yes"
         self.risk_assessment["recent_travel_history"] = input("Have you traveled internationally in the last 14 days? (Yes/No): ").lower() == "yes"
 
-# Ask the user for his/her travel history.
+    # Ask the user for his/her travel history.
+    def ask_travel_history(self):
+        print("Travel History:")
+        num_trips = int(input("How many trips have you taken recently? "))
+        for i in range(num_trips):
+            self.travel_history.append(input(f"Trip {i+1}: "))
+            
 # Ask the user about contact log.
 # Ask the user about testing and test results for COVID 19.
 # Ask the user about his/her emergency information.
