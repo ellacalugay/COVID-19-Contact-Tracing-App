@@ -62,7 +62,13 @@ class UserInformation:
         self.health_declaration["sore throat"] = input("Have you experienced pain or irritation in the throat in the last 14 days? (Yes/No): ").lower() == "yes"
         self.health_declaration["diarrhea"] = input("Have you experienced diarrhea in the last 14 days? (Yes/No): ").lower() == "yes"
 
-# Ask the user about Risk Assessment.
+    # Ask the user about Risk Assessment.
+    def ask_risk_assessment(self):
+        print("Risk Assessment:")
+        self.risk_assessment["underlying_health_conditions"] = input("Do you have any underlying health conditions? (Yes/No): ").lower() == "yes"
+        self.risk_assessment["close_contact_positive_cases"] = input("Have you been in close contact with someone who has tested positive for COVID-19? If yes, who are they? (Yes/No): ").lower() == "yes"
+        self.risk_assessment["recent_travel_history"] = input("Have you traveled internationally in the last 14 days? (Yes/No): ").lower() == "yes"
+
 # Ask the user for his/her travel history.
 # Ask the user about contact log.
 # Ask the user about testing and test results for COVID 19.
