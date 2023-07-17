@@ -58,4 +58,3 @@ class FrontPage():
 
 if __name__ == "__main__":
     app = FrontPage()
-    app.run()

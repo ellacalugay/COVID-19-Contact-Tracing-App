@@ -4,13 +4,23 @@
 # Import necessary modules
 import tkinter as tk
 from PIL import ImageTk, Image
+from bg_frame import BackgroundFrame
 
 # Create a class for add entry
 class AddEntry(tk.Frame):
-    def __init__(self):
-        tk.Frame.__init__(self)
+    def __init__(self, master=None):
+        tk.Frame.__init__(self, master)
+        
+        # Load and display the background image in the AddEntry frame
+        self.add_image_path = "F:\\2nd sem\\OOP\\FINAL PROJ\\entry bg.png"
+        self.add_original_image = Image.open(self.add_image_path)
+        self.add_resized_image = self.add_original_image.resize((850, 650))
+        self.background_image = ImageTk.PhotoImage(self.add_resized_image)
 
-    # Set the background image
+        canvas = tk.Canvas(self, width=850, height=650)
+        canvas.pack(fill="both", expand=True)
+        canvas.create_image(0, 0, image=self.background_image, anchor="nw")
+
     # Create Personal Information Label
         # Get user's name
         # Get user's age
