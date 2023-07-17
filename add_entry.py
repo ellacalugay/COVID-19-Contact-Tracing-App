@@ -34,7 +34,7 @@ class AddEntry(tk.Frame):
         self.name_entry = tk.Entry(self, width=40)
         self.name_entry.place(x=70, y= 56)
         # Set initial text
-        self.name_entry.insert(0, "FIRST NAME/MIDDLE NAME/SURNAME")  
+        self.name_entry.insert(0, " FIRST NAME/MIDDLE NAME/SURNAME")  
         self.name_entry.bind("<FocusIn>", self.clear_name_text)
         self.name_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
@@ -46,7 +46,7 @@ class AddEntry(tk.Frame):
         self.age_entry = tk.Entry(self, width=40)
         self.age_entry.place(x=70, y= 80)
         # Set initial text
-        self.age_entry.insert(0, "YOUR AGE")  
+        self.age_entry.insert(0, " YOUR AGE")  
         self.age_entry.bind("<FocusIn>", self.clear_age_text)
         self.age_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
@@ -58,7 +58,7 @@ class AddEntry(tk.Frame):
         self.gender_entry = tk.Entry(self, width=40)
         self.gender_entry.place(x=70, y= 105)
         # Set initial text
-        self.gender_entry.insert(0, "FEMALE/MALE")  
+        self.gender_entry.insert(0, " FEMALE/MALE")  
         self.gender_entry.bind("<FocusIn>", self.clear_sex_text)
         self.gender_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
@@ -70,17 +70,38 @@ class AddEntry(tk.Frame):
         self.residential_address_entry = tk.Entry(self, width=36)
         self.residential_address_entry.place(x=100, y= 130)
         # Set initial text
-        self.residential_address_entry.insert(0, "BARANGAY/CITY/PROVINCE")  
+        self.residential_address_entry.insert(0, " BARANGAY/CITY/PROVINCE")  
         self.residential_address_entry.bind("<FocusIn>", self.clear_resi_add_text)
         self.residential_address_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Create Contact Information label
         self.contact_info_label = tk.Label(self, text=" CONTACT INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
-        self.contact_info_label.place(x=380, y=10)
+        self.contact_info_label.place(x=17, y=180)
         self.contact_info_label.config(bg="#FFE1FF")
 
         # Get user's contact number
+        self.contact_num = tk.Label(self, text="CONTACT NUMBER: ", height=1, font=("Lucida Bright", 10, "bold"))
+        self.contact_num.place(x=17, y=226)
+        self.contact_num.config(bg="#EAEAEA")
+        # Residential Address Input
+        self.contact_num_entry = tk.Entry(self, width=28)
+        self.contact_num_entry.place(x=155, y= 226)
+        # Set initial text
+        self.contact_num_entry.insert(0, "09*********")  
+        self.contact_num_entry.bind("<FocusIn>", self.clear_contact_num_text)
+        self.contact_num_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
+        
         # Get user's email address
+        self.email_add = tk.Label(self, text="EMAIL ADDRESS:  ", height=1, font=("Lucida Bright", 10, "bold"))
+        self.email_add.place(x=17, y=251)
+        self.email_add.config(bg="#EAEAEA")
+        # Residential Address Input
+        self.email_add_entry = tk.Entry(self, width=30)
+        self.email_add_entry.place(x=140, y= 251)
+        # Set initial text
+        self.email_add_entry.insert(0, " juandelacruz@gmail.com")  
+        self.email_add_entry.bind("<FocusIn>", self.clear_email_add_text)
+        self.email_add_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
     # Create Emergency Information label
         # Get user's name of guardian
@@ -115,3 +136,9 @@ class AddEntry(tk.Frame):
     def clear_resi_add_text(self, event):
         self.residential_address_entry.delete(0, tk.END)
         self.residential_address_entry.config(fg="black")
+    def clear_contact_num_text(self, event):
+        self.contact_num_entry.delete(0, tk.END)
+        self.contact_num_entry.config(fg="black")
+    def clear_email_add_text(self, event):
+        self.email_add_entry.delete(0, tk.END)
+        self.email_add_entry.config(fg="black")
