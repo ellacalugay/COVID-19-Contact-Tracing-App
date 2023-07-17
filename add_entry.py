@@ -49,7 +49,7 @@ class AddEntry(tk.Frame):
         self.age_entry.bind("<FocusIn>", self.clear_age_text)
         self.age_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
-        # Get user's gender
+        # Get user's sex
         self.gender = tk.Label(self, text="SEX:     ", height=1, font=("Lucida Bright", 10, "bold"))
         self.gender.place(x=17, y=105)
         self.gender.config(bg="#EAEAEA")
@@ -62,6 +62,16 @@ class AddEntry(tk.Frame):
         self.gender_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
         # Get user's residential address
+        self.residential_address = tk.Label(self, text="RESID ADD: ", height=1, font=("Lucida Bright", 10, "bold"))
+        self.residential_address.place(x=17, y=130)
+        self.residential_address.config(bg="#EAEAEA")
+        # Residential Address Input
+        self.residential_address_entry = tk.Entry(self, width=36)
+        self.residential_address_entry.place(x=100, y= 130)
+        # Set initial text
+        self.residential_address_entry.insert(0, "BARANGAY/CITY/PROVINCE")  
+        self.residential_address_entry.bind("<FocusIn>", self.clear_age_text)
+        self.residential_address_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
     # Create Contact Information label
         # Get user's contact number
