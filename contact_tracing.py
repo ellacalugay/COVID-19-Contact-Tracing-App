@@ -76,7 +76,13 @@ class UserInformation:
         for i in range(num_trips):
             self.travel_history.append(input(f"Trip {i+1}: "))
             
-# Ask the user about contact log.
+    # Ask the user about contact log.
+    def ask_contact_log(self):
+            print("Contact Log:")
+            num_contacts = int(input("How many contacts do you want to log? "))
+            for i in range(num_contacts):
+                self.contact_log.append(input(f"Contact {i+1}: "))
+
 # Ask the user about testing and test results for COVID 19.
 # Ask the user about his/her emergency information.
 # Ash the user if he/she wants to receive notifications from the app.
