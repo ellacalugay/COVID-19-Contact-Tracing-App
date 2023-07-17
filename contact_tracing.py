@@ -1,18 +1,19 @@
 # Ella Lureen C. Calugay | BSCPE 1-5 | Final Project
 
 # Pseudocode
-# Import tkinter
+# Import necessary modules
 import tkinter as tk
 from PIL import ImageTk, Image
+from add_entry import AddEntry
 
 class FrontPage():
-    def main_window():
+    def __init__(self):
         # Create the main window
-        window = tk.Tk()
-        window.title("COVID Tracing App")
+        self.window = tk.Tk()
+        self.window.title("COVID Tracing App")
 
         # Set the window size and position
-        window.geometry("850x650")
+        self.window.geometry("850x650")
 
         # Load the background image
         image_path = "F:\\2nd sem\\OOP\\FINAL PROJ\\bg img.png"
@@ -21,41 +22,39 @@ class FrontPage():
         background_image = ImageTk.PhotoImage(resized_image)
 
         # Create a canvas to display the background image
-        canvas = tk.Canvas(window, width=500, height=300)
+        canvas = tk.Canvas(self.window, width=500, height=300)
         canvas.pack(fill="both", expand=True)
         canvas.create_image(0, 0, image=background_image, anchor="nw")
 
         # Create add entry button.
-        add_button = tk.Button(window, text="Add Entry", command=add_entry, height=3, bg="yellow", fg="black", font=("Arial", 10, "bold"))
+        add_button = tk.Button(self.window, text="Add Entry", command=self.add_entry, height=3, bg="yellow", fg="black", font=("Arial", 10, "bold"))
         add_button.place(x=450, y=270, width=200)
 
         # Create search entry button.
-        search_button = tk.Button(window, text="Search Entry", command=search_entry, height=3, bg="pink", fg="black", font=("Arial", 10, "bold"))
+        search_button = tk.Button(self.window, text="Search Entry", command=self.search_entry, height=3, bg="pink", fg="black", font=("Arial", 10, "bold"))
         search_button.place(x=450, y=340, width=200)
 
         # Create All about covid 19 button.
-        search_button = tk.Button(window, text="All About COVID 19", command=search_entry, height=2, bg="red", fg="black", font=("Arial", 10, "bold"))
+        search_button = tk.Button(self.window, text="All About COVID 19", command=self.search_entry, height=2, bg="red", fg="black", font=("Arial", 10, "bold"))
         search_button.place(x=350, y=535, width=200)
 
         # Create App policies button.
-        search_button = tk.Button(window, text="App Policies", command=search_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
+        search_button = tk.Button(self.window, text="App Policies", command=self.search_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
         search_button.place(x=570, y=535, width=200) 
 
         # Run the main window loop.
-        window.mainloop()
+        self.window.mainloop()
 
     # Create add entry
-    def add_entry():
+    def add_entry(self):
         # Add entry functionality
-        pass
+        info_frame = AddEntry()
+        info_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Create search entry
-    def search_entry():
+    def search_entry(self):
         # Search entry functionality
         pass
-
-    # Call the main_window function to run the application.
-    main_window()
 
 if __name__ == "__main__":
     app = FrontPage()
