@@ -5,27 +5,29 @@
 class UserInformation:
     # Create a non-parametrized constructor
     def __init__(self):
-        self.personal_information = {}
-        self.vaccinated_covid = False
-        self.health_declaration = {}
-        self.risk_assessment = {}
-        self.travel_history = []
-        self.contact_log = []
-        self.covid19_testing = {}
-        self.emergency_information = {}
-        self.receive_notifications = False
+        self.personal_information = ""
+        self.vaccinated_covid = "False"
+        self.health_declaration = ""
+        self.risk_assessment = ""
+        self.travel_history = ""
+        self.contact_log = ""
+        self.covid19_testing = ""
+        self.emergency_information = ""
+        self.receive_notifications = ""
 
     # Ask the user for his/her personal information.
     def ask_personal_information(self):
         print("Please provide you personal information:")
-        self.personal_information["name"] = input("What is your full name?: ")
-        self.personal_information["age"] = int(input("How old are you?: "))
-        self.personal_information["gender"] = input("What is your gender?: ")
-        self.personal_information["phone number"] = int(input("What is your contact number?: "))
-        self.personal_information["email address"] = input("What is your email address?: ")
-        self.personal_information["residential address"] = input("What is your residential address?: ")
-        self.personal_information["occupation"] = input("What is your current occupation?: ")
-
+        self.name = input("What is your full name?: ")
+        self.age = int(input("How old are you?: "))
+        self.genderr = input("What is your gender?: ")
+        self.phone_number = int(input("What is your contact number?: "))
+        self.email_address = input("What is your email address?: ")
+        self.residential_address = input("What is your residential address?: ")
+    
+    # Ask the user for his/her covid vaccine type.
+    def ask_covid_vaccination_type(self):
+        self.covid_vaccination_type = input("Have you been vaccinated for COVID-19? (yes/no): ")
         # Prompt for COVID-19 vaccination
         while True:
             response = input("Have you been vaccinated for COVID-19? (yes/no): ")
@@ -54,20 +56,20 @@ class UserInformation:
     # Ask the user about health declaration.
     def ask_health_declaration(self):
         print("Health Declaration:")
-        self.health_declaration["fever"] = input("Have you experienced fever in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["cough"] = input("Have you experienced a new or worsening cough in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["breathing_issues"] = input("Have you experienced any breathing issues in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["fatigue"] = input("Have you experienced feeling excessively tired in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["loss of state and smell"] = input("Have you experienced anosmia(loss of smell) or ageusia (loss of taste) in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["sore throat"] = input("Have you experienced pain or irritation in the throat in the last 14 days? (Yes/No): ").lower() == "yes"
-        self.health_declaration["diarrhea"] = input("Have you experienced diarrhea in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.fever = input("Have you experienced fever in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.cough = input("Have you experienced a new or worsening cough in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.breathing_issue = input("Have you experienced any breathing issues in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.fatigue = input("Have you experienced feeling excessively tired in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.loss_of_state_and_smell = input("Have you experienced anosmia(loss of smell) or ageusia (loss of taste) in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.sore_hroat = input("Have you experienced pain or irritation in the throat in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.diarrhea = input("Have you experienced diarrhea in the last 14 days? (Yes/No): ").lower() == "yes"
 
     # Ask the user about Risk Assessment.
     def ask_risk_assessment(self):
         print("Risk Assessment:")
-        self.risk_assessment["underlying_health_conditions"] = input("Do you have any underlying health conditions? (Yes/No): ").lower() == "yes"
-        self.risk_assessment["close_contact_positive_cases"] = input("Have you been in close contact with someone who has tested positive for COVID-19? If yes, who are they? (Yes/No): ").lower() == "yes"
-        self.risk_assessment["recent_travel_history"] = input("Have you traveled internationally in the last 14 days? (Yes/No): ").lower() == "yes"
+        self.underlying_health_conditions = input("Do you have any underlying health conditions? (Yes/No): ").lower() == "yes"
+        self.close_contact_positive_cases = input("Have you been in close contact with someone who has tested positive for COVID-19? If yes, who are they? (Yes/No): ").lower() == "yes"
+        self.recent_travel_history = input("Have you traveled internationally in the last 14 days? (Yes/No): ").lower() == "yes"
 
     # Ask the user for his/her travel history.
     def ask_travel_history(self):
@@ -88,16 +90,16 @@ class UserInformation:
         print("COVID-19 Testing:")
         self.covid19_testing["tested_positive"] = input("Have you tested positive for COVID-19? (Yes/No): ").lower() == "yes"
         if self.covid19_testing["tested_positive"]:
-            self.covid19_testing["test_date"] = input("Date of the COVID-19 test: ")
-            self.covid19_testing["result_date"] = input("Date of the test result: ")
-            self.covid19_testing["test_result"] = input("Test result (Positive/Negative): ").lower() == "positive"
+            self.test_date = input("Date of the COVID-19 test: ")
+            self.result_date = input("Date of the test result: ")
+            self.test_result = input("Test result (Positive/Negative): ").lower() == "positive"
 
     # Ask the user about his/her emergency information.   
     def ask_emergency_information(self):
             print("Emergency Information:")
-            self.emergency_information["emergency_contact"] = input("Emergency Contact Name: ")
-            self.emergency_information["emergency_phone"] = input("Emergency Contact Phone number: ")
-            self.emergency_information["blood_type"] = input("Your Blood Type: ")
+            self.emergency_contact = input("Emergency Contact Name: ")
+            self.emergency_phone = input("Emergency Contact Phone number: ")
+            self.blood_type = input("Your Blood Type: ")
 
     # Ask the user if he/she wants to receive notifications from the app.
     def ask_receive_notifications(self):
