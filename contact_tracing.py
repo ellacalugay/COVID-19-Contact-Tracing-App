@@ -15,7 +15,7 @@ class UserInformation:
         self.emergency_information = {}
         self.receive_notifications = False
 
-# Ask the user for his/her personal information.
+    # Ask the user for his/her personal information.
     def ask_personal_information(self):
         print("Please provide you personal information:")
         self.personal_information["name"] = input("What is your full name?: ")
@@ -34,6 +34,22 @@ class UserInformation:
                 break
             else:
                 print("Invalid input. Please enter 'yes' or 'no'.")
+    
+    # Ask the user for his/her covid vaccine type.
+    def ask_covid_vaccination_type(self):
+        if self.personal_information.get("vaccinated_covid"):
+            while True:
+                vaccination_type = input("Please select the type of COVID-19 vaccination you received:\n"
+                                         "1 - 1st shot COVID vaccine\n"
+                                         "2 - 2nd shot COVID vaccine\n"
+                                         "3 - 1st shot booster\n"
+                                         "4 - 2nd shot booster\n"
+                                         "Enter the corresponding number: ")
+                if vaccination_type in ["1", "2", "3", "4"]:
+                    self.personal_information["covid_vaccination_type"] = int(vaccination_type)
+                    break
+                else:
+                    print("Invalid input. Please enter a valid option (1, 2, 3, or 4).")
 
 # Ask the user about Risk Assessment.
 # Ask the user for his/her travel history.
