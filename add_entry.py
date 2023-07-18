@@ -5,6 +5,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 from bg_frame import BackgroundFrame
+from tkinter import StringVar
 
 # Create a class for add entry
 class AddEntry(tk.Frame):
@@ -21,7 +22,7 @@ class AddEntry(tk.Frame):
         canvas.pack(fill="both", expand=True)
         canvas.create_image(0, 0, image=self.background_image, anchor="nw")
 
-        # Create Personal Information Label
+    # Create Personal Information Label
         self.personal_info_label = tk.Label(self, text=" PERSONAL INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
         self.personal_info_label.place(x=15, y=10)
         self.personal_info_label.config(bg="#FFE1FF")
@@ -74,7 +75,7 @@ class AddEntry(tk.Frame):
         self.residential_address_entry.bind("<FocusIn>", self.clear_resi_add_text)
         self.residential_address_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
-        # Create Contact Information label
+    # Create Contact Information label
         self.contact_info_label = tk.Label(self, text=" CONTACT INFORMATION ", height=2, font=("Tahoma", 10, "bold"))
         self.contact_info_label.place(x=17, y=180)
         self.contact_info_label.config(bg="#FFE1FF")
@@ -158,7 +159,32 @@ class AddEntry(tk.Frame):
         self.guardian_email_add_entry.config(fg="gray", bg="#FFFAFA", font=("Times", 11))
 
     # Create Risk Assessment label
+        self.risk_assessment_label = tk.Label(self, text=" RISK ASSESSMENT ", height=2, font=("Tahoma", 10, "bold"))
+        self.risk_assessment_label.place(x=400, y=10)
+        self.risk_assessment_label.config(bg="#FFE1FF")
         # Ask if the user experienced any of the following symptoms: fever, cough, shortness of breath, sore throat, loss of taste or smell, or body aches
+        self.symptoms = tk.Label(self, text=" Have you experienced any of the following symptoms:", font=("Tekton Pro", 10, "bold"))
+        self.symptoms.place(x=400, y=55)
+        self.symptoms.config(bg="#FFFAFA")
+
+        # Create the symptoms choice variable
+        self.fever_choice = StringVar()
+        self.cough_choice = StringVar()
+        self.shortness_of_breath_choice = StringVar()
+
+        # Create fever checkbutton
+        self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Arial", 8), variable=self.fever_choice)
+        self.fever_checkbox.place(x=400, y=80)
+        self.fever_checkbox.config(bg="#FFFAFA")
+        # Create cough checkbutton
+        self.cough_checkbox = tk.Checkbutton(self, text="Cough", font=("Arial", 8), variable=self.cough_choice)
+        self.cough_checkbox.place(x=400, y=110)
+        self.cough_checkbox.config(bg="#FFFAFA")
+        # Create shortness of breath checkbutton
+        self.shortness_of_breath_checkbox = tk.Checkbutton(self, text="Shortness of breath", font=("Arial", 8), variable=self.shortness_of_breath_choice)
+        self.shortness_of_breath_checkbox.place(x=400, y=140)
+        self.shortness_of_breath_checkbox.config(bg="#FFFAFA")
+
         # Ask if the user have been in close contact with someone who has tested positive for COVID-19.
 
     # Create Travel History label
