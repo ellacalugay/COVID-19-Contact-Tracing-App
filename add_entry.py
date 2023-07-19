@@ -170,22 +170,60 @@ class AddEntry(tk.Frame):
         # Create the symptoms choice variable
         self.fever_choice = StringVar()
         self.cough_choice = StringVar()
+        self.sore_throat_choice = StringVar()
         self.shortness_of_breath_choice = StringVar()
+        self.diarrhea_choice = StringVar()
+        self.body_aches_choice = StringVar()
+        self.loss_of_taste_choice = StringVar()
+        self.loss_of_smell_choice = StringVar()
 
         # Create fever checkbutton
         self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Arial", 8), variable=self.fever_choice)
-        self.fever_checkbox.place(x=400, y=80)
+        self.fever_checkbox.place(x=420, y=80)
         self.fever_checkbox.config(bg="#FFFAFA")
         # Create cough checkbutton
         self.cough_checkbox = tk.Checkbutton(self, text="Cough", font=("Arial", 8), variable=self.cough_choice)
-        self.cough_checkbox.place(x=400, y=110)
+        self.cough_checkbox.place(x=420, y=110)
         self.cough_checkbox.config(bg="#FFFAFA")
+        # Create sore throat checkbutton
+        self.sore_throat_checkbox = tk.Checkbutton(self, text="Sore throat", font=("Arial", 8), variable=self.sore_throat_choice)
+        self.sore_throat_checkbox.place(x=420, y=140)
+        self.sore_throat_checkbox.config(bg="#FFFAFA")
         # Create shortness of breath checkbutton
         self.shortness_of_breath_checkbox = tk.Checkbutton(self, text="Shortness of breath", font=("Arial", 8), variable=self.shortness_of_breath_choice)
-        self.shortness_of_breath_checkbox.place(x=400, y=140)
+        self.shortness_of_breath_checkbox.place(x=420, y=170)
         self.shortness_of_breath_checkbox.config(bg="#FFFAFA")
+        # Create diarrhea checkbutton
+        self.diarrhea_checkbox = tk.Checkbutton(self, text="Diarrhea", font=("Arial", 8), variable=self.diarrhea_choice)
+        self.diarrhea_checkbox.place(x=570, y=80)
+        self.diarrhea_checkbox.config(bg="#FFFAFA")
+        # Create body aches checkbutton
+        self.body_aches_checkbox = tk.Checkbutton(self, text="Body aches", font=("Arial", 8), variable=self.body_aches_choice)
+        self.body_aches_checkbox.place(x=570, y=110)
+        self.body_aches_checkbox.config(bg="#FFFAFA")
+        # Create loss of taste checkbutton
+        self.loss_of_taste_checkbox = tk.Checkbutton(self, text="Loss of taste", font=("Arial", 8), variable=self.loss_of_taste_choice)
+        self.loss_of_taste_checkbox.place(x=570, y=140)
+        self.loss_of_taste_checkbox.config(bg="#FFFAFA")
+        # Create loss of smell checkbutton
+        self.loss_of_smell_checkbox = tk.Checkbutton(self, text="Loss of smell", font=("Arial", 8), variable=self.loss_of_smell_choice)
+        self.loss_of_smell_checkbox.place(x=570, y=170)
+        self.loss_of_smell_checkbox.config(bg="#FFFAFA")
 
         # Ask if the user have been in close contact with someone who has tested positive for COVID-19.
+        self.close_contact = tk.Label(self, text=" Have you recently encountered a COVID-19 carrier?", font=("Tekton Pro", 10, "bold"))
+        self.close_contact.place(x=400, y=200)
+        self.close_contact.config(bg="#FFFAFA")
+        # Create the close contact choice variable
+        self.close_contact_choice = tk.StringVar()
+        # Create Yes Radiobuttons
+        self.close_contact_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.close_contact_choice, value="yes")
+        self.close_contact_yes_radio.place(x=420, y=225)
+        self.close_contact_yes_radio.config(bg="#FFFAFA")
+        # Create No Radiobuttons
+        self.close_contact_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.close_contact_choice, value="no")
+        self.close_contact_no_radio.place(x=570, y=225)
+        self.close_contact_no_radio.config(bg="#FFFAFA")
 
     # Create Travel History label
         # Ask if the user have traveled to any high-risk areas recently.
