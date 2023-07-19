@@ -226,9 +226,51 @@ class AddEntry(tk.Frame):
         self.close_contact_no_radio.config(bg="#FFFAFA")
 
     # Create Travel History label
+        self.travel_history_label = tk.Label(self, text=" TRAVEL HISTORY ", height=2, font=("Tahoma", 10, "bold"))
+        self.travel_history_label.place(x=400, y=275)
+        self.travel_history_label.config(bg="#FFE1FF")
         # Ask if the user have traveled to any high-risk areas recently.
+        self.high_risk_areas = tk.Label(self, text=" Have you traveled to any high-risk areas recently?", font=("Tekton Pro", 10, "bold"))
+        self.high_risk_areas.place(x=400, y=320)
+        self.high_risk_areas.config(bg="#FFFAFA")
+        # Create the high risk areas choice variable
+        self.high_risk_areas_choice = tk.StringVar()
+        # Create Yes Radiobuttons
+        self.high_risk_areas_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.high_risk_areas_choice, value="yes")
+        self.high_risk_areas_yes_radio.place(x=420, y=345)
+        self.high_risk_areas_yes_radio.config(bg="#FFFAFA")
+        # Create No Radiobuttons
+        self.high_risk_areas_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.high_risk_areas_choice, value="no")
+        self.high_risk_areas_no_radio.place(x=570, y=345)
+        self.high_risk_areas_no_radio.config(bg="#FFFAFA")
         # Ask if the user have traveled internationally in the past 14 days.
+        self.trav_internationally = tk.Label(self, text=" Have you traveled internationally in the past 14 days?", font=("Tekton Pro", 10, "bold"))
+        self.trav_internationally.place(x=400, y=375)
+        self.trav_internationally.config(bg="#FFFAFA")
+        # Create the trav internationally choice variable
+        self.trav_internationally_choice = tk.StringVar()
+        # Create Yes Radiobuttons
+        self.trav_internationally_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.trav_internationally_choice, value="yes")
+        self.trav_internationally_yes_radio.place(x=420, y=400)
+        self.trav_internationally_yes_radio.config(bg="#FFFAFA")
+        # Create No Radiobuttons
+        self.trav_internationally_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.trav_internationally_choice, value="no")
+        self.trav_internationally_no_radio.place(x=570, y=400)
+        self.trav_internationally_no_radio.config(bg="#FFFAFA")
         # Ask if the user have recently attended large gatherings or events.
+        self.large_event = tk.Label(self, text=" Have you recently been to a large gathering or an event?", font=("Tekton Pro", 10, "bold"))
+        self.large_event.place(x=400, y=430)
+        self.large_event.config(bg="#FFFAFA")
+        # Create the trav internationally choice variable
+        self.large_event_choice = tk.StringVar()
+        # Create Yes Radiobuttons
+        self.large_event_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.large_event_choice, value="yes")
+        self.large_event_yes_radio.place(x=420, y=455)
+        self.large_event_yes_radio.config(bg="#FFFAFA")
+        # Create No Radiobuttons
+        self.large_event_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.large_event_choice, value="no")
+        self.large_event_no_radio.place(x=570, y=455)
+        self.large_event_no_radio.config(bg="#FFFAFA")
 
     # Create Health Declaration label
         # Ask if the user's received covid vaccine shot.
