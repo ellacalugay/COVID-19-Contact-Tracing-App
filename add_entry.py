@@ -323,6 +323,49 @@ class AddEntry(tk.Frame):
         self.large_event_no_radio.place(x=570, y=420)
         self.large_event_no_radio.config(bg="#FFFAFA")
 
+        # Create Submit Button
+        submit_button = tk.Button(self, text="SUBMIT", command= self.submit_data, bg="#e19c55", height=2)
+        submit_button.place(x=730, y=550)
+    
+    # Define the data for submit
+    def submit_data(self):
+        # Get the entered data for Personal Information
+        user_name = self.name_entry.get()
+        user_age = self.age_entry.get()
+        user_sex = self.gender_entry.get()
+        user_resid_address = self.residential_address_entry.get()
+
+        # Get the entered data for Contact Information
+        user_contact_num = self.contact_num_entry.get()
+        user_email_address = self.email_add_entry.get()
+
+        # Get the entered data for Emergency Information
+        emergency_name = self.guardian_name_entry.get()
+        emergency_relationship = self.guardian_relationship_entry.get()
+        emergency_contact_num = self.guardian_contact_entry.get()
+        emergency_email = self.guardian_email_add_entry.get()
+
+        # Get the entered data for Health Declaration
+        vaccine = self.vaccine_shot_choice.get()
+        tested = self.covid_test_shot_choice.get()
+
+        # Get the entered data for Risk Assessment
+        symptoms_fever = self.fever_choice.get()
+        symptoms_cough = self.cough_choice.get()
+        symptoms_sore_throat = self.sore_throat_choice.get()
+        symptoms_shortness_of_breath = self.shortness_of_breath_choice.get()
+        symptoms_diarrhea = self.diarrhea_choice.get()
+        symptoms_body_aches = self.body_aches_choice.get()
+        symptoms_loss_of_taset = self.loss_of_taste_choice.get()
+        symptoms_loss_of_smell = self.loss_of_smell_choice.get()
+        close_contact = self.close_contact_choice.get()
+
+        # Get the entered data for Travel History
+        high_risk = self.high_risk_areas_choice.get()
+        travel = self.trav_internationally_choice.get()
+        large_event = self.large_event_choice.get()
+  
+
     # Display text will be gone if the user click the entry
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
@@ -354,3 +397,4 @@ class AddEntry(tk.Frame):
     def clear_guardian_email_add_text(self, event):
         self.guardian_email_add_entry.delete(0, tk.END)
         self.guardian_email_add_entry.config(fg="black")
+
