@@ -58,6 +58,12 @@ class FrontPage():
         search_frame = SearchEntry()
         search_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
+    def close_window(self):
+        self.window.destroy()
+    
+    def run(self):
+        self.window.mainloop()
+
 # Create the main window
 if __name__ == "__main__":
     app = FrontPage()

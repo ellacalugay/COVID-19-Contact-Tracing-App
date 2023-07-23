@@ -378,11 +378,9 @@ class AddEntry(tk.Frame):
             if travel == "No" and high_risk == "No" and travel == "No" and large_event == "No":
                 # Display that you are not a close contact and not a covid positive
                 window4 = NotifyFrame(self.master)
-                window4.pack(fill="both", expand=True)
             else:
                 # Display that you are not a close contact and not a covid positive
                 window4 = NotifyFrame(self.master)
-                window4.pack(fill="both", expand=True)
 
     # Display text will be gone if the user click the entry
     def clear_name_text(self, event):
@@ -415,4 +413,3 @@ class AddEntry(tk.Frame):
     def clear_guardian_email_add_text(self, event):
         self.guardian_email_add_entry.delete(0, tk.END)
         self.guardian_email_add_entry.config(fg="black")
-
