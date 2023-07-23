@@ -310,11 +310,11 @@ class AddEntry(tk.Frame):
         self.trav_internationally_no_radio.place(x=570, y=365)
         self.trav_internationally_no_radio.config(bg="#FFFAFA")
         # Ask if the user have recently attended large gatherings or events.
-        self.large_event = tk.Label(self, text=" Have you recently been to a large gathering or an event?", width=46, font=("Tekton Pro", 10, "bold"))
+        self.large_event = tk.Label(self, text=" Have you recently been to a large gathering or an event?", width=46, font=("Tekton Pro", 10, "bold"))
         self.large_event.place(x=400, y=395)
         self.large_event.config(bg="#FFFAFA")
         # Create the trav internationally choice variable
-        self.large_event_choice = tk.StringVar()
+        self.large_event_choice = tk.StringVar(value="no")
         # Create Yes Radiobuttons
         self.large_event_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.large_event_choice, value="yes")
         self.large_event_yes_radio.place(x=420, y=420)
@@ -375,7 +375,7 @@ class AddEntry(tk.Frame):
                              symptoms_diarrhea, symptoms_body_aches, symptoms_loss_of_taste, symptoms_loss_of_smell,
                              close_contact, high_risk, travel, large_event])
             # Create notification for user
-            if travel == "No" and high_risk == "No" and travel == "No" and large_event == "No":
+            if travel == "No" and high_risk == "No" and large_event == "No":
                 # Display that you are not a close contact and not a covid positive
                 window4 = NotifyFrame(self.master)
             else:
