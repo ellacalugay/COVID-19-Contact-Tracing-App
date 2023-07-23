@@ -6,6 +6,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 from bg_frame import BackgroundFrame
 from tkinter import StringVar
+import csv
 
 # Create a class for add entry
 class AddEntry(tk.Frame):
@@ -193,19 +194,19 @@ class AddEntry(tk.Frame):
          # Create the covid test choice variable
         self.covid_test_shot_choice = tk.StringVar()
         # Create choice 1
-        self.covid_test_choice1_radio = tk.Radiobutton(self, text="Yes - Positive", font=("Arial", 8), variable=self.vaccine_shot_choice, value="1")
+        self.covid_test_choice1_radio = tk.Radiobutton(self, text="Yes - Positive", font=("Arial", 8), variable=self.covid_test_shot_choice, value="1")
         self.covid_test_choice1_radio.place(x=30, y=566)
         self.covid_test_choice1_radio.config(bg="#FFFAFA")
         # Create choice 2
-        self.covid_test_choice2_radio = tk.Radiobutton(self, text="Yes - Pending", font=("Arial", 8), variable=self.vaccine_shot_choice, value="2")
+        self.covid_test_choice2_radio = tk.Radiobutton(self, text="Yes - Pending", font=("Arial", 8), variable=self.covid_test_shot_choice, value="2")
         self.covid_test_choice2_radio.place(x=30, y=593)
         self.covid_test_choice2_radio.config(bg="#FFFAFA")
         # Create choice 3
-        self.covid_test_choice3_radio = tk.Radiobutton(self, text="Yes - Negative", font=("Arial", 8), variable=self.vaccine_shot_choice, value="3")
+        self.covid_test_choice3_radio = tk.Radiobutton(self, text="Yes - Negative", font=("Arial", 8), variable=self.covid_test_shot_choice, value="3")
         self.covid_test_choice3_radio.place(x=150, y=566)
         self.covid_test_choice3_radio.config(bg="#FFFAFA")
         # Create choice 4
-        self.covid_test_choice4_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.vaccine_shot_choice, value="4")
+        self.covid_test_choice4_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.covid_test_shot_choice, value="4")
         self.covid_test_choice4_radio.place(x=150, y=593)
         self.covid_test_choice4_radio.config(bg="#FFFAFA")
 
@@ -324,8 +325,8 @@ class AddEntry(tk.Frame):
         self.large_event_no_radio.config(bg="#FFFAFA")
 
         # Create Submit Button
-        submit_button = tk.Button(self, text="SUBMIT", command= self.submit_data, bg="#e19c55", height=2)
-        submit_button.place(x=730, y=550)
+        submit_button = tk.Button(self, text="SAVE & SUBMIT", command= self.submit_data, bg="#FFE1FF", height=2)
+        submit_button.place(x=730, y=595)
     
     # Define the data for submit
     def submit_data(self):
@@ -356,7 +357,7 @@ class AddEntry(tk.Frame):
         symptoms_shortness_of_breath = self.shortness_of_breath_choice.get()
         symptoms_diarrhea = self.diarrhea_choice.get()
         symptoms_body_aches = self.body_aches_choice.get()
-        symptoms_loss_of_taset = self.loss_of_taste_choice.get()
+        symptoms_loss_of_taste = self.loss_of_taste_choice.get()
         symptoms_loss_of_smell = self.loss_of_smell_choice.get()
         close_contact = self.close_contact_choice.get()
 
@@ -364,8 +365,16 @@ class AddEntry(tk.Frame):
         high_risk = self.high_risk_areas_choice.get()
         travel = self.trav_internationally_choice.get()
         large_event = self.large_event_choice.get()
-  
 
+        # Save the file using CVS
+        with open('entry.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([user_name, user_age, user_sex, user_resid_address, user_contact_num, user_email_address, 
+                             emergency_name, emergency_relationship, emergency_contact_num, emergency_email, vaccine, 
+                             tested, symptoms_fever, symptoms_cough, symptoms_sore_throat, symptoms_shortness_of_breath,
+                             symptoms_diarrhea, symptoms_body_aches, symptoms_loss_of_taste, symptoms_loss_of_smell,
+                             close_contact])
+           
     # Display text will be gone if the user click the entry
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
