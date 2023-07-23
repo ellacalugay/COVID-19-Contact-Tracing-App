@@ -56,5 +56,7 @@ class FrontPage():
         # Search entry functionality
         pass
 
+# Create the main window
 if __name__ == "__main__":
     app = FrontPage()
+    app.run()

@@ -4,7 +4,7 @@
 # Import necessary modules
 import tkinter as tk
 from PIL import ImageTk, Image
-from bg_frame import BackgroundFrame
+from notif_frame import NotifyFrame
 from tkinter import StringVar
 import csv
 
@@ -374,7 +374,12 @@ class AddEntry(tk.Frame):
                              tested, symptoms_fever, symptoms_cough, symptoms_sore_throat, symptoms_shortness_of_breath,
                              symptoms_diarrhea, symptoms_body_aches, symptoms_loss_of_taste, symptoms_loss_of_smell,
                              close_contact])
-           
+            # Hide the AddEntry window
+            self.master.withdraw()
+           # Create and display the NotifyFrame window for the user
+            window4 = NotifyFrame(self.master)
+            window4.mainloop()
+
     # Display text will be gone if the user click the entry
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
