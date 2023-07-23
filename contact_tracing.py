@@ -5,6 +5,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 from add_entry import AddEntry
+from search_entry import SearchEntry
 
 class FrontPage():
     def __init__(self):
@@ -54,7 +55,8 @@ class FrontPage():
     # Create search entry
     def search_entry(self):
         # Search entry functionality
-        pass
+        search_frame = SearchEntry()
+        search_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Create the main window
 if __name__ == "__main__":
