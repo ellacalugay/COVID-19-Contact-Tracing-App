@@ -373,12 +373,16 @@ class AddEntry(tk.Frame):
                              emergency_name, emergency_relationship, emergency_contact_num, emergency_email, vaccine, 
                              tested, symptoms_fever, symptoms_cough, symptoms_sore_throat, symptoms_shortness_of_breath,
                              symptoms_diarrhea, symptoms_body_aches, symptoms_loss_of_taste, symptoms_loss_of_smell,
-                             close_contact])
-            # Hide the AddEntry window
-            self.master.withdraw()
-           # Create and display the NotifyFrame window for the user
-            window4 = NotifyFrame(self.master)
-            window4.mainloop()
+                             close_contact, high_risk, travel, large_event])
+            # Create notification for user
+            if travel == "No" and high_risk == "No" and travel == "No" and large_event == "No":
+                # Display that you are not a close contact and not a covid positive
+                window4 = NotifyFrame(self.master)
+                window4.pack(fill="both", expand=True)
+            else:
+                # Display that you are not a close contact and not a covid positive
+                window4 = NotifyFrame(self.master)
+                window4.pack(fill="both", expand=True)
 
     # Display text will be gone if the user click the entry
     def clear_name_text(self, event):
