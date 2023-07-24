@@ -7,6 +7,7 @@ from PIL import ImageTk, Image
 from add_entry import AddEntry
 from search_entry import SearchEntry
 from all_about_covid19 import AllAboutCovid
+from app_policies import AppPolicies
 
 class FrontPage():
     def __init__(self):
@@ -30,19 +31,19 @@ class FrontPage():
 
         # Create add entry button.
         add_button = tk.Button(self.window, text="Add Entry", command=self.add_entry, height=3, bg="yellow", fg="black", font=("Arial", 10, "bold"))
-        add_button.place(x=450, y=270, width=200)
+        add_button.place(x=450, y=290, width=200)
 
         # Create search entry button.
         search_button = tk.Button(self.window, text="Search Entry", command=self.search_entry, height=3, bg="pink", fg="black", font=("Arial", 10, "bold"))
-        search_button.place(x=450, y=340, width=200)
+        search_button.place(x=450, y=360, width=200)
 
         # Create All about covid 19 button.
         covid19_button = tk.Button(self.window, text="All About COVID 19", command=self.covid_entry, height=2, bg="red", fg="black", font=("Arial", 10, "bold"))
-        covid19_button.place(x=350, y=535, width=200)
+        covid19_button.place(x=350, y=580, width=200)
 
         # Create App policies button.
-        app_policies_button = tk.Button(self.window, text="App Policies", command=self.search_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
-        app_policies_button.place(x=570, y=535, width=200) 
+        app_policies_button = tk.Button(self.window, text="App Policies", command=self.app_policies_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
+        app_policies_button.place(x=570, y=580, width=200) 
 
         # Run the main window loop.
         self.window.mainloop()
@@ -64,6 +65,12 @@ class FrontPage():
         # All About COVID 19 functionality
         covid_frame = AllAboutCovid(self.window)
         covid_frame.place(x=0, y=0, relwidth=1, relheight=1)
+    
+    # Create App Policies entry
+    def app_policies_entry(self):
+         # App Policies functionality
+        app_policies_frame = AppPolicies(self.window)
+        app_policies_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
     def close_window(self):
         self.window.destroy()

@@ -5,12 +5,12 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
-# Create a class for add entry
+# Create a class for All About Covid 19
 class AllAboutCovid(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
         
-        # Load and display the background image in the AddEntry frame
+        # Load and display the background image in the All About Covid 19 frame
         self.add_image_path = "F:\\2nd sem\\OOP\\FINAL PROJ\\covid.png"
         self.add_original_image = Image.open(self.add_image_path)
         self.add_resized_image = self.add_original_image.resize((850, 650))
@@ -22,10 +22,10 @@ class AllAboutCovid(tk.Frame):
 
         # Add the text as a label widget
         text = """COVID-19, also known as the coronavirus disease 2019, is a highly contagious respiratory ailment caused by the SARS coronavirus 2 (SARS-CoV-2). The virus is thought to have originated in bats and was possibly transmitted to humans via an intermediate animal host, while more research is needed to identify its specific origin. COVID-19 spreads largely through respiratory droplets produced when an infected person coughs, sneezes, speaks, or breathes. It can also spread by contacting infected surfaces or objects and then touching the face, particularly the mouth, nose, or eyes.
-\n COVID-19 symptoms can range greatly, ranging from moderate to severe. Fever, cough, and shortness of breath are common symptoms. Fatigue, muscle aches, loss of taste or smell, sore throat, and headache are all possible symptoms. Some people infected with the virus may be asymptomatic, which means they have no visible symptoms but can still spread the virus to others.
-\n COVID-19 can be exceptionally severe and even fatal, especially in older people and those who have underlying health issues such as heart disease, diabetes, or weakened immune systems. The virus has had a large global health and economic impact, with countries employing various methods to restrict its spread, including social isolation, mask-wearing, and lockdowns.
-\n Multiple vaccinations were produced and disseminated globally to combat the pandemic, with guaranteed effectiveness in preventing severe sickness and lowering transmission. Variants of the virus, however, continue to evolve, providing hurdles to current COVID-19 control efforts. As the situation progresses, health officials continue to monitor and respond to the epidemic in order to protect public health and minimize its impact on communities.
-\n As the world unites in solidarity and resilience, we hold onto hope, knowing that together, we will overcome this global challenge and emerge stronger, brighter, and more connected than ever before."""
+\nCOVID-19 symptoms can range greatly, ranging from moderate to severe. Fever, cough, and shortness of breath are common symptoms. Fatigue, muscle aches, loss of taste or smell, sore throat, and headache are all possible symptoms. Some people infected with the virus may be asymptomatic, which means they have no visible symptoms but can still spread the virus to others.
+\nCOVID-19 can be exceptionally severe and even fatal, especially in older people and those who have underlying health issues such as heart disease, diabetes, or weakened immune systems. The virus has had a large global health and economic impact, with countries employing various methods to restrict its spread, including social isolation, mask-wearing, and lockdowns.
+\nMultiple vaccinations were produced and disseminated globally to combat the pandemic, with guaranteed effectiveness in preventing severe sickness and lowering transmission. Variants of the virus, however, continue to evolve, providing hurdles to current COVID-19 control efforts. As the situation progresses, health officials continue to monitor and respond to the epidemic in order to protect public health and minimize its impact on communities.
+\nAs the world unites in solidarity and resilience, we hold onto hope, knowing that together, we will overcome this global challenge and emerge stronger, brighter, and more connected than ever before."""
 
         text_label = tk.Label(self, text=text, wraplength=800, bg="light pink", font=('new times roman', 12), justify='left')
         text_label.place(x=25, y=120)
