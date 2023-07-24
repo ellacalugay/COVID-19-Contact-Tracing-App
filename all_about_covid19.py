@@ -51,3 +51,5 @@ class AllAboutCovid(tk.Frame):
     def open_main_window(self):
         app = self.FrontPage()
         app.main_window()
+
+# End of code.

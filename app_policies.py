@@ -85,3 +85,5 @@ By using the COVID Tracing App, users agree to abide by these policies. The succ
     def open_main_window(self):
         app = self.FrontPage()
         app.main_window()
+    
+# End of code.

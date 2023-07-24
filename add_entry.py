@@ -432,3 +432,5 @@ class AddEntry(tk.Frame):
     def clear_guardian_email_add_text(self, event):
         self.guardian_email_add_entry.delete(0, tk.END)
         self.guardian_email_add_entry.config(fg="black")
+
+# End of code.

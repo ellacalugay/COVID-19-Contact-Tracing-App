@@ -108,3 +108,5 @@ class SearchEntry(tk.Frame):
         if not found:
             self.result1_canvas.create_text(10, 10, anchor="nw", text="Sorry. Name not found. No information available.", font=("Adobe Caslon Pro", 11, "bold"), fill="red")
             self.result2_canvas.create_text(10, 10, anchor="nw", text="")
+
+# End of code.
