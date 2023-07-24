@@ -219,46 +219,47 @@ class AddEntry(tk.Frame):
         self.symptoms.place(x=400, y=55)
         self.symptoms.config(bg="#FFFAFA")
 
-        # Create the symptoms choice variable
-        self.fever_choice = StringVar()
-        self.cough_choice = StringVar()
-        self.sore_throat_choice = StringVar()
-        self.shortness_of_breath_choice = StringVar()
-        self.diarrhea_choice = StringVar()
-        self.body_aches_choice = StringVar()
-        self.loss_of_taste_choice = StringVar()
-        self.loss_of_smell_choice = StringVar()
+        # Create the symptoms choice variables and set onvalue and offvalue
+        self.fever_choice = StringVar(value="No")
+        self.cough_choice = StringVar(value="No")
+        self.sore_throat_choice = StringVar(value="No")
+        self.shortness_of_breath_choice = StringVar(value="No")
+        self.diarrhea_choice = StringVar(value="No")
+        self.body_aches_choice = StringVar(value="No")
+        self.loss_of_taste_choice = StringVar(value="No")
+        self.loss_of_smell_choice = StringVar(value="No")
+
 
         # Create fever checkbutton
-        self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Arial", 8), variable=self.fever_choice)
+        self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Arial", 8), variable=self.fever_choice, onvalue="Yes", offvalue="No")
         self.fever_checkbox.place(x=420, y=80)
         self.fever_checkbox.config(bg="#FFFAFA")
         # Create cough checkbutton
-        self.cough_checkbox = tk.Checkbutton(self, text="Cough", font=("Arial", 8), variable=self.cough_choice)
+        self.cough_checkbox = tk.Checkbutton(self, text="Cough", font=("Arial", 8), variable=self.cough_choice, onvalue="Yes", offvalue="No")
         self.cough_checkbox.place(x=420, y=107)
         self.cough_checkbox.config(bg="#FFFAFA")
         # Create sore throat checkbutton
-        self.sore_throat_checkbox = tk.Checkbutton(self, text="Sore throat", font=("Arial", 8), variable=self.sore_throat_choice)
+        self.sore_throat_checkbox = tk.Checkbutton(self, text="Sore throat", font=("Arial", 8), variable=self.sore_throat_choice, onvalue="Yes", offvalue="No")
         self.sore_throat_checkbox.place(x=420, y=134)
         self.sore_throat_checkbox.config(bg="#FFFAFA")
         # Create shortness of breath checkbutton
-        self.shortness_of_breath_checkbox = tk.Checkbutton(self, text="Breathing difficulty", font=("Arial", 8), variable=self.shortness_of_breath_choice)
+        self.shortness_of_breath_checkbox = tk.Checkbutton(self, text="Breathing difficulty", font=("Arial", 8), variable=self.shortness_of_breath_choice, onvalue="Yes", offvalue="No")
         self.shortness_of_breath_checkbox.place(x=520, y=134)
         self.shortness_of_breath_checkbox.config(bg="#FFFAFA")
         # Create diarrhea checkbutton
-        self.diarrhea_checkbox = tk.Checkbutton(self, text="Diarrhea", font=("Arial", 8), variable=self.diarrhea_choice)
+        self.diarrhea_checkbox = tk.Checkbutton(self, text="Diarrhea", font=("Arial", 8), variable=self.diarrhea_choice, onvalue="Yes", offvalue="No")
         self.diarrhea_checkbox.place(x=520, y=80)
         self.diarrhea_checkbox.config(bg="#FFFAFA")
         # Create body aches checkbutton
-        self.body_aches_checkbox = tk.Checkbutton(self, text="Body aches", font=("Arial", 8), variable=self.body_aches_choice)
+        self.body_aches_checkbox = tk.Checkbutton(self, text="Body aches", font=("Arial", 8), variable=self.body_aches_choice, onvalue="Yes", offvalue="No")
         self.body_aches_checkbox.place(x=520, y=107)
         self.body_aches_checkbox.config(bg="#FFFAFA")
         # Create loss of taste checkbutton
-        self.loss_of_taste_checkbox = tk.Checkbutton(self, text="Loss of taste", font=("Arial", 8), variable=self.loss_of_taste_choice)
+        self.loss_of_taste_checkbox = tk.Checkbutton(self, text="Loss of taste", font=("Arial", 8), variable=self.loss_of_taste_choice, onvalue="Yes", offvalue="No")
         self.loss_of_taste_checkbox.place(x=650, y=80)
         self.loss_of_taste_checkbox.config(bg="#FFFAFA")
         # Create loss of smell checkbutton
-        self.loss_of_smell_checkbox = tk.Checkbutton(self, text="Loss of smell", font=("Arial", 8), variable=self.loss_of_smell_choice)
+        self.loss_of_smell_checkbox = tk.Checkbutton(self, text="Loss of smell", font=("Arial", 8), variable=self.loss_of_smell_choice, onvalue="Yes", offvalue="No")
         self.loss_of_smell_checkbox.place(x=650, y=107)
         self.loss_of_smell_checkbox.config(bg="#FFFAFA")
 

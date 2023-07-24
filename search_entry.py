@@ -62,7 +62,6 @@ class SearchEntry(tk.Frame):
         found = False
 
         # Search the name in the CSV file
-        # Search the name in the CSV file
         with open('entry.csv', 'r') as file:
             reader = csv.reader(file)
             for row in reader:
@@ -74,6 +73,15 @@ class SearchEntry(tk.Frame):
                     
                     result2 = f"HEALTH DECLARATION\nHave you received covid 19 vaccine shot: {row[10]}\nHave you been tested for COVID-19? {row[11]}\n\n"
                     print("\n")
+                    # Get the selected symptoms
+                    selected_symptoms = []
+                    if row[12] == "Yes":
+                        if row[13] == "Fever":
+                            selected_symptoms.append("Fever")
+                        if row[14] == "Cough":
+                            selected_symptoms.append("Cough")
+                        if row[15] == "Sore throat":
+                            selected_symptoms.append("Sore throat")
                     result2 += f"\n\nRISK ASSESSMENT\nHave you experienced any of the following symptoms? {row[12]}\nHave you recently encountered a COVID-19 carrier? {row[13]}\n\n"
                     print("\n")
                     result2 += f"\n\nTRAVEL HISTORY\nHave you traveled to any high-risk areas recently? {row[14]}\nHave you traveled internationally in the past 14 days? {row[15]}\nHave you recently been to a large gathering or an event? {row[16]}"
