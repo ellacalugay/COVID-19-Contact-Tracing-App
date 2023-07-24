@@ -7,6 +7,7 @@ from PIL import ImageTk, Image
 from notif_frame import NotifyFrame
 from tkinter import StringVar
 import csv
+from tkinter import PhotoImage
 
 # Create a class for add entry
 class AddEntry(tk.Frame):
@@ -324,6 +325,23 @@ class AddEntry(tk.Frame):
         self.large_event_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.large_event_choice, value="no")
         self.large_event_no_radio.place(x=570, y=420)
         self.large_event_no_radio.config(bg="#FFFAFA")
+
+        # Load the image
+        picture_path = "F:\\2nd sem\\OOP\\FINAL PROJ\\card.png"
+        picture_image = Image.open(picture_path)
+
+        # Resize the image if needed
+        picture_image = picture_image.resize((315, 180))
+
+        # Create a PhotoImage object from the image
+        picture_photo = ImageTk.PhotoImage(picture_image)
+
+        # Create a label to display the image
+        picture_label = tk.Label(self, image=picture_photo)
+        picture_label.place(x=400, y=450)
+
+        # Keep a reference to the PhotoImage object to avoid garbage collection
+        picture_label.image = picture_photo
 
         # Create Submit Button
         submit_button = tk.Button(self, text="SAVE & SUBMIT", command= self.submit_data, bg="#FFE1FF", height=2)
