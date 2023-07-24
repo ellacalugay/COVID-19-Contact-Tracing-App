@@ -6,6 +6,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 from add_entry import AddEntry
 from search_entry import SearchEntry
+from all_about_covid19 import AllAboutCovid
 
 class FrontPage():
     def __init__(self):
@@ -36,12 +37,12 @@ class FrontPage():
         search_button.place(x=450, y=340, width=200)
 
         # Create All about covid 19 button.
-        search_button = tk.Button(self.window, text="All About COVID 19", command=self.search_entry, height=2, bg="red", fg="black", font=("Arial", 10, "bold"))
-        search_button.place(x=350, y=535, width=200)
+        covid19_button = tk.Button(self.window, text="All About COVID 19", command=self.covid_entry, height=2, bg="red", fg="black", font=("Arial", 10, "bold"))
+        covid19_button.place(x=350, y=535, width=200)
 
         # Create App policies button.
-        search_button = tk.Button(self.window, text="App Policies", command=self.search_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
-        search_button.place(x=570, y=535, width=200) 
+        app_policies_button = tk.Button(self.window, text="App Policies", command=self.search_entry, height=2, bg="light blue", fg="black", font=("Arial", 10, "bold"))
+        app_policies_button.place(x=570, y=535, width=200) 
 
         # Run the main window loop.
         self.window.mainloop()
@@ -57,6 +58,12 @@ class FrontPage():
         # Search entry functionality
         search_frame = SearchEntry()
         search_frame.place(x=0, y=0, relwidth=1, relheight=1)
+
+    # Create covid19 entry
+    def covid_entry(self):
+        # All About COVID 19 functionality
+        covid_frame = AllAboutCovid(self.window)
+        covid_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
     def close_window(self):
         self.window.destroy()

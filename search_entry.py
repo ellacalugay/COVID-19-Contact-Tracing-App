@@ -39,14 +39,27 @@ class SearchEntry(tk.Frame):
         self.result2_canvas = tk.Canvas(self, width=395, height=400, bg="light pink")
         self.result2_canvas.place(x=435, y=150)
 
-        # Create exit button
-        ok_button = tk.Button(self.master, text="OK", command=self.close_window,bg='#CD5555', font=('new times roman', 12))
+        # Create an exit button
+        ok_button = tk.Button(self, text="OK", command=self.close_window, bg='#CD5555', font=('new times roman', 12))
         ok_button.place(x=405, y=580)
 
-# Exit the window. This will exit the program.
+        # Create a turn back button
+        back_button = tk.Button(self, text='Back', command=self.go_to_main_window, bg='light pink', font=('new times roman', 12))
+        back_button.place(x=775, y=595)
+
      # Define the exit window. This home window will exit the program
     def close_window(self):
         self.master.destroy()
+
+    # Go back to the main window.
+    def go_to_main_window(self):
+        self.destroy()
+        self.master.deiconify()  # This will show the main window again.
+    
+    # Go back to the main window.
+    def open_main_window(self):
+        app = self.FrontPage()
+        app.main_window()
 
  # Define the perform search
     # Inside the perform_search method of SearchEntry class
